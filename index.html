@@ -25,7 +25,7 @@
       $(function () {
         var socket = io.connect('http://localhost:3000');
         socket.on('connect', function(){
-          socket.emit('authentication', {username: "ramandika", password: "pranamuli"});
+          socket.emit('authentication', {token: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTU2ODgxNTEzMn0.9SMH-LUyS83OyxjZBHuzwxuZvhzmn6vw-Z5sSg7IXyw"});
           socket.on('unauthorized', function(err){
             console.log("There was an error with the authentication:", err.message);
           });
