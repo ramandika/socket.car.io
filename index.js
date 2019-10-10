@@ -68,6 +68,7 @@ require('socketio-auth')(io, {
     //Authenticate before join other room
     authenticateRoom(socket.client.user,room).then((response) => {
       if(response.status === "ok"){
+        console.log("authenticate successs");
         socket.join(room);
       }else{
         socket.emit('err',`Not permitted to join room ${room}, ${response.message}`)
